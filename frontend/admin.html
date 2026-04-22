@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container admin">
+
+<h2>🛠 Admin Dashboard</h2>
+
+<input id="tname" placeholder="Task">
+<input id="tskill" placeholder="Skill">
+<input id="tlocation" placeholder="Location">
+<input id="ttime" placeholder="Time">
+
+<select id="tpriority">
+<option>High</option>
+<option>Medium</option>
+<option>Low</option>
+</select>
+
+<button onclick="addTask()">Add Task</button>
+<button onclick="autoAssign()">Auto Assign</button>
+
+<pre id="output"></pre>
+
+<button onclick="logout()">Logout</button>
+<button onclick="resetSystem()">Reset Demo</button>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function logout(){
+    localStorage.clear();
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
