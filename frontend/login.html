@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🔐 Login</h1>
+
+    <select id="role">
+        <option value="">Select Role</option>
+        <option value="admin">Admin</option>
+        <option value="volunteer">Volunteer</option>
+    </select>
+
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+</div>
+
+<script>
+function login(){
+    let role = document.getElementById("role").value;
+    let user = document.getElementById("username").value.trim();
+    let pass = document.getElementById("password").value.trim();
+
+    if(!role || !user || !pass){
+        alert("Fill all fields");
+        return;
+    }
+
+    if(role === "admin"){
+        if(user === "admin" && pass === "1234"){
+            sessionStorage.setItem("role", "admin");
+            window.location.href = "admin.html";
+        } else {
+            alert("Use admin / 1234");
+        }
+    } else {
+        sessionStorage.setItem("role", "volunteer");
+        sessionStorage.setItem("volunteerName", user);
+        window.location.href = "volunteer.html";
+    }
+}
+</script>
+</body>
+</html>
