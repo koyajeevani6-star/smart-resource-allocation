@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Volunteer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container volunteer">
+
+    <h2>👤 Volunteer Panel</h2>
+    <h3 id="welcome"></h3>
+
+    <!-- 🔹 Register Section -->
+    <input id="vskill" placeholder="Enter your skill">
+    <button onclick="addVolunteer()">Register</button>
+
+    <!-- 🔔 Notification -->
+    <p id="taskMsg" style="font-weight:bold; color:green;"></p>
+
+    <!-- 📢 Tasks Section -->
+    <h3>📢 Your Tasks</h3>
+    <div id="myTasks"></div>
+
+    <button onclick="logout()">Logout</button>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function logout(){
+    sessionStorage.clear();  // ✅ IMPORTANT (not localStorage)
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
